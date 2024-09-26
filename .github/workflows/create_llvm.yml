@@ -8,7 +8,7 @@ on:
       - '.github/workflows/create_llvm.yml'
   pull_request:
     paths:
-      - '.github/workflows/create_llvm.yml'         
+      - '.github/workflows/create_llvm.yml'
   workflow_dispatch:
 
 jobs:
@@ -77,7 +77,7 @@ jobs:
         with:
           sparse-checkout: |
             platform
-          path: ock          
+          path: ock
 
       - name: Install Ninja
         if: steps.cache.outputs.cache-hit != 'true'
@@ -91,7 +91,7 @@ jobs:
       - name: Flags checker
         if: steps.cache.outputs.cache-hit != 'true'
         run:
-          echo Building on "${{ matrix.os }}" with os_flags "${{ matrix.os_flags}}" arch "${{ matrix.arch }}"extra flags "${{ matrix.build_type_flags}}" and  build_type "${{matrix.build_type}}"
+          echo Building on "${{ matrix.os }}" with os_flags "${{ matrix.os_flags }}" arch "${{ matrix.arch }}"extra flags "${{ matrix.build_type_flags}}" and  build_type "${{matrix.build_type}}"
 
       - name: Run cmake
         if: steps.cache.outputs.cache-hit != 'true'
