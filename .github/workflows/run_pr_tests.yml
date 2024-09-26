@@ -29,15 +29,15 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
-      
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
       # installs tools, ninja, installs llvm and sets up sccahe
       - name: setup-ubuntu
         uses:  ./.github/actions/setup_ubuntu_build
         with:
           llvm_version: 18
-          llvm_build_type: RelAssert        
-  
+          llvm_build_type: RelAssert
+
       # These need to match the configurations of build_pr_cache to use the cache effectively
       - name: build host x86_64 online release
         uses: ./.github/actions/do_build_ock
@@ -67,14 +67,14 @@ jobs:
           ninja -C build_offline check-ock-UnitCL
 
   # build and run riscv m1, execute UnitCL and lit tests
-  run_riscv_m1:  
+  run_riscv_m1:
 
     runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
-      
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
       # installs tools, ninja, installs llvm and sets up sccahe
       - name: setup-ubuntu
         uses:  ./.github/actions/setup_ubuntu_build
@@ -83,7 +83,7 @@ jobs:
           llvm_build_type: RelAssert
 
       - name: build riscv M1
-        uses: ./.github/actions/do_build_ock/do_build_m1  
+        uses: ./.github/actions/do_build_ock/do_build_m1
 
       - name: run riscv M1 lit
         run:
@@ -100,7 +100,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: setup-ubuntu-clang-format
         run:
