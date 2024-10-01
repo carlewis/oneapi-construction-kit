@@ -10,3 +10,11 @@ updates:
       github-actions:
         patterns:
           - "*"
+  - package-ecosystem: "github-actions"
+    directory: "/.github/actions/build_portDNN_action/action.yml"
+    schedule:
+      interval: "daily"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
